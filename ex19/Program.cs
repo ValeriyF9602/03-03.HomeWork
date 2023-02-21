@@ -8,3 +8,30 @@
 
 ***************************************************************************************/
 
+
+Console.Write("Введите пятизначное число: ");
+string? str = Console.ReadLine();
+
+if (str!.Length != 5)
+{
+    Console.WriteLine("Неверный формат числа");
+}
+else
+{
+    int count = 0;
+    for (int i = 0; i < 2; i++) // (int i = 0; i < str.Length / 2; i++), если бы у нас было произвольное количество цифр в числе
+    {
+        if (str[i] == str[str.Length - i - 1])
+        {
+            count++;
+        }
+    }
+    if (count == 2)
+    {
+        Console.WriteLine("Введённое число — палиндром");
+    }
+    else
+    {
+        Console.WriteLine("Введённое число не является палиндромом");
+    }
+}
